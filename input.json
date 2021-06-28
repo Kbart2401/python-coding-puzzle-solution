@@ -1,0 +1,12 @@
+{
+  "target_price": 15.05,
+  "menu": {
+    "mixed_fruit": 2.15,
+    "french_fries": 2.75,
+    "side_salad": 3.35,
+    "hot_wings": 3.55,
+    "mozzarella_sticks": 4.20,
+    "sampler_plate": 5.80,
+    "someting": 0.15
+  }
+}
