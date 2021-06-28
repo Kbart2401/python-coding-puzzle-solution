@@ -18,6 +18,7 @@ def combo_lookup(menu, target):
         for j in range(len(combos)):
             if math.fsum(combos[j]) == target:
                 return print_menu(menu, combos[j])
+    print("There is no combination of dishes that is equal to the target price")
 
 
 # Program init
