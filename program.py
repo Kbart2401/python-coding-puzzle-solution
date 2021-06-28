@@ -1,31 +1,34 @@
 import sys
 import json
+import math
+from itertools import combinations
+
+
+def print_menu(menu, array):
+    dishes = []
+    for i in range(len(array)):
+        dishes.append(menu[array[i]])
+    print(dishes)
 
 
 def combo_lookup(menu, target):
-    menu = list(menu.items())
-    for i in range(len(menu)):
-        names, prices = [], []
-        names.append(menu[i][0])
-        prices.append(menu[i][1])
-        if prices[0] == target:
-            print(names[0])
-            return
-        for j in range(i+1, len(menu)):
-            names.append(menu[j][0])
-            prices.append(menu[j][1])
-            if sum(prices) == target:
-                print(names)
-                return
-    print("There is no combination of dishes that is equal to the target price")
+    prices = list(menu.keys())
+    for i in range(1, len(prices) + 1):
+        combos = list(combinations(prices, i))
+        for j in range(len(combos)):
+            if math.fsum(combos[j]) == target:
+                return print_menu(menu, combos[j])
 
 
+# Program init
 try:
     cli_arg = sys.argv[1]
     file = open(cli_arg, "r")
     obj = json.load(file)
     target_price = obj["target_price"]
-    menu = obj["menu"]
+    menu = {}
+    for dish in obj["menu"]:
+        menu[obj["menu"][dish]] = dish
     combo_lookup(menu, target_price)
 except:
-    print('No argument given')
+    print('Please include an argument')
