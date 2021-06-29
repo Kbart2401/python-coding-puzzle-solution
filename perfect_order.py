@@ -8,8 +8,9 @@ def print_menu(menu, array):
     dishes = []
     for i in range(len(array)):
         dishes.append(menu[array[i]])
-    print('The dishes you could order that add up to your target price include:')
-    print(', '.join(dishes))
+    results = ', '.join(dishes)
+    print(f'The dishes you could order that add up to your target price include: \n{results}')
+    return results
 
 # Receives menu prices, runs possible combinations and checks for one that adds up to correct price
 def combo_lookup(menu, target):
@@ -18,7 +19,8 @@ def combo_lookup(menu, target):
         combos = list(combinations(prices, i))
         for j in range(len(combos)):
             if math.fsum(combos[j]) == target:
-                return print_menu(menu, combos[j])
+                print_menu(menu, combos[j])
+                return combos[j]
     print("There is no combination of dishes that is equal to the target price")
 
 

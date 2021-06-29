@@ -4,7 +4,7 @@ This program is designed to give you the "perfect order" which is an order at a 
 ## Usage
 To run the program, you must have Python 3 installed locally. Download this repo, then in the project folder and from your CLI run 
 ```bash
-python perfect-order.py <path to json file>
+python perfect_order.py <path to json file>
 ```
 Either type in the path to your json file or drap and drop the file into your CLI to copy the path.
 
