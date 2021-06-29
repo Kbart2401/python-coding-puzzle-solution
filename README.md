@@ -6,6 +6,8 @@ To run the program, you must have Python 3 installed locally. Download this repo
 ```bash
 python perfect-order.py <path to json file>
 ```
+Either type in the path to your json file or drap and drop the file into your CLI to copy the path.
+
 You will need a json-formatted file to run the program. An example.json is given in the repo. The format is as follows:
 
 ```javascript
@@ -26,3 +28,5 @@ You will need a json-formatted file to run the program. An example.json is given
 If no argument is included in the CLI a message will notify the user. 
 
 Only one perfect order will be given from the program, if there are multiple perfect orders, the first will be given.
+
+Enjoy!
