@@ -36,5 +36,5 @@ try:
         menu[float(obj["menu"][dish])] = dish
     combo_lookup(menu, target_price)
 except:
-    print('''Please include an argument. If you have included one, please ensure 
+    print('''Please include one argument. If you have included one, please ensure 
 it is a properly json-formatted document following the correct menu format''')
