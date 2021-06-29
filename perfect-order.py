@@ -11,7 +11,7 @@ def print_menu(menu, array):
     print('The dishes you could order that add up to your target price include:')
     print(', '.join(dishes))
 
-# Receives menu prices, runs combinations and checks for one with correct price
+# Receives menu prices, runs possible combinations and checks for one that adds up to correct price
 def combo_lookup(menu, target):
     prices = list(menu.keys())
     for i in range(1, len(prices) + 1):
@@ -28,10 +28,10 @@ try:
     cli_arg = sys.argv[1]
     file = open(cli_arg, "r")
     obj = json.load(file)
-    target_price = obj["target_price"]
+    target_price = float(obj["target_price"])
     menu = {}
     for dish in obj["menu"]:
-        menu[obj["menu"][dish]] = dish
+        menu[float(obj["menu"][dish])] = dish
     combo_lookup(menu, target_price)
 except:
     print('''Please include an argument. If you have included one, please ensure 
