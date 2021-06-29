@@ -2,7 +2,7 @@
 This program is designed to give you the "perfect order" which is an order at a restaurant with a user-defined menu and price point as well as a user-defined target price. By running the program the user will receive a list of items from the menu whose prices add up to the exact amount of the target price. If there is no perfect order avaialable a message will indicate such.
 
 ## Usage
-To run the program, you must have Python 3 installed locally. From your CLI run 
+To run the program, you must have Python 3 installed locally. Download this repo, then in the project folder and from your CLI run 
 ```bash
 python perfect-order.py <path to json file>
 ```
@@ -24,3 +24,5 @@ You will need a json-formatted file to run the program. An example.json is given
 ```
 
 If no argument is included in the CLI a message will notify the user. 
+
+Only one perfect order will be given from the program, if there are multiple perfect orders, the first will be given.
